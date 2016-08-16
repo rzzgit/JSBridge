@@ -1,0 +1,9 @@
+﻿{
+ 
+   "plugins":[
+  
+		{"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
+,
+		{"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+
+}
