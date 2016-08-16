@@ -11,7 +11,7 @@ for java:
 	
 a simple plugin:
 
-for java
+for java:
 
    public class FirstPlugin extends JSPlugin{
 
