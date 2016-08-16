@@ -13,41 +13,41 @@ a simple plugin:
 
 for java:
 
-   public class FirstPlugin extends JSPlugin{
+       public class FirstPlugin extends JSPlugin{
 
-    //to do sth.  such as:  camera plugin , file plugin , http request plugin and so on....
-      public void test(String jsonObject){
-    	     onSuccess(jsonObject);
-    	     //or   onError (jsonObject);
-      }
-}
+        //to do sth.  such as:  camera plugin , file plugin , http request plugin and so on....
+          public void test(String jsonObject){
+                 onSuccess(jsonObject);
+                 //or   onError (jsonObject);
+          }
+        }
 
 
 for js:
 
-   <!-- <script src="JSBridge.js"></script> -->
-     function test(){
+        <script src="JSBridge.js"></script>
+         function test(){
 
-            //             pluginName    pluginMethod       params      success or error callback
-            triggerNative('FirstPlugin',   'test',          {a:1,b:3},  function(data){
-                  alert("success     "+data);
-            },function(error){
-                alert("error     "+error);
-            });
-        }
+                //             pluginName    pluginMethod       params      success or error callback
+                triggerNative('FirstPlugin',   'test',          {a:1,b:3},  function(data){
+                      alert("success     "+data);
+                },function(error){
+                    alert("error     "+error);
+                });
+            }
 	
 for assets config:
    file name is "jsbridge_config";
 
              {
 
-           "plugins":[
+               "plugins":[
 
-                {"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
-            ,
-                {"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+                    {"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
+                ,
+                    {"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
 
-        }
+            }
 		
 		
 		
