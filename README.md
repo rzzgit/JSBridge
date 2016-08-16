@@ -3,11 +3,11 @@ How to do use?
 
 for java: 
 
-  HybridManager.init(getApplicationContext());
-  hybridWebView = new HybridWebView(this);
-  hybridWebView.loadUrl("file:///android_asset/demo.html");
-	
-  addContentView(hybridWebView.getmWebView(), new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+      HybridManager.init(getApplicationContext());
+      hybridWebView = new HybridWebView(this);
+      hybridWebView.loadUrl("file:///android_asset/demo.html");
+
+      addContentView(hybridWebView.getmWebView(), new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 	
 a simple plugin:
 
@@ -24,11 +24,11 @@ for java
 
 
 for js:
-    <script src="JSBridge.js"></script>
+
+   <!-- <script src="JSBridge.js"></script> -->
      function test(){
 
             //             pluginName    pluginMethod       params      success or error callback
-
             triggerNative('FirstPlugin',   'test',          {a:1,b:3},  function(data){
                   alert("success     "+data);
             },function(error){
@@ -36,18 +36,18 @@ for js:
             });
         }
 	
-for assets config
+for assets config:
    file name is "jsbridge_config";
 
-     {
- 
-   "plugins":[
-  
-		{"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
-    ,
-		{"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+             {
 
-}
+           "plugins":[
+
+                {"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
+            ,
+                {"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+
+        }
 		
 		
 		
