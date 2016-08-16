@@ -12,6 +12,7 @@
         function test(){
             triggerNative('FirstPlugin','test',{a:1,b:3},function(data){
                   alert("success     "+data);
+
             },function(error){
                 alert("error     "+error);
             });
