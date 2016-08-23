@@ -47,10 +47,12 @@ public class JSPlugin {
 
 	public void onSuccess(Object object){
 		jsBridge.onSuccess(callBack,object);
+		onDestroy();
 	}
 
 	public void onError(Object object){
 		jsBridge.onError(callBack,object);
+		onDestroy();
 	}
 
 	/**

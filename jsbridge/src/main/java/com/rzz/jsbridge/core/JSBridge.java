@@ -13,17 +13,17 @@ import java.lang.reflect.Method;
  */
 public class JSBridge{
 
-	private HybridWebView webView;
+	private HybridWebViewImpl webView;
 
-	public HybridWebView getWebView() {
+	public HybridWebViewImpl getWebView() {
 		return webView;
 	}
 
-	public void setWebView(HybridWebView webView) {
+	public void setWebView(HybridWebViewImpl webView) {
 		this.webView = webView;
 	}
 
-	public JSBridge(HybridWebView webView) {
+	public JSBridge(HybridWebViewImpl webView) {
 		this.webView = webView;
 	}
 

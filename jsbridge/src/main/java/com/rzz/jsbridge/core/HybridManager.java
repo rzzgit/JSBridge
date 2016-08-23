@@ -18,6 +18,8 @@ public class HybridManager {
 		HybridManager.appContext = appContext;
 	}
 	 
-	 
+	public static HybridWebView getNewInstanceWeb(Context context){
+		return new HybridWebViewImpl(context);
+	}
 
 }
