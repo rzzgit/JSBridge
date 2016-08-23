@@ -3,7 +3,10 @@
    "plugins":[
   
 		{"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
-,
-		{"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+   ,
+	    {"name":"CameraPlugin111","package":"com.rzz.test.plugin.CameraPlugin","ext":{"b":"v"} }
+   ,
+		{"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} }
+   ]
 
 }

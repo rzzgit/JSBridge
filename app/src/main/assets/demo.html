@@ -25,11 +25,24 @@
                 alert("error     "+error);
             });
         }
+
+
+        function CameraPlugin(){
+           triggerNative('CameraPlugin111','testaaa',"yt",function(data){
+                alert("success     "+data);
+            },function(error){
+                alert("error     "+error);
+            });
+
+        }
     </script>
 </head>
 <body>
      <button onclick="test()">test</button>
 
      <button onclick="test2()">test2</button>
+
+
+     <button onclick="CameraPlugin()">test2sdfdsf</button>
 </body>
 </html>
