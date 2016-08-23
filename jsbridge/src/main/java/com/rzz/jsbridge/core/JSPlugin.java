@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 /**
  * js插件
- * @author rzz
+ * @author com.rzz
  */
 public class JSPlugin {
 

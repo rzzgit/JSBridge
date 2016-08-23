@@ -1,6 +1,7 @@
 package com.rzz.jsbridge.core;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.os.Message;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class HybridWebView{
 
@@ -21,13 +23,13 @@ public class HybridWebView{
 					break;
 			}
 			super.handleMessage(msg);
-		};
+		}
 
 	};
 
 	private WebView webView;
 
-
+    private Activity activity;
 	/**
 	 * 默认使用自带webview，后续支持其他webkit
 	 * @param context
@@ -41,14 +43,24 @@ public class HybridWebView{
 	public HybridWebView(Context context,WebView webView) {
 		super();
 		this.webView = webView;
-
+        if(context instanceof Activity){
+			this.activity = (Activity)context;
+		}
 		WebSettings webSettings = webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		webSettings.setSupportZoom(false);
 		webView.addJavascriptInterface(new JSBridge(this), "JSBridge");
 		webView.setWebChromeClient(new WebChromeClient());
+		webView.setWebViewClient(new MyWebViewClient());
 	}
 
+    private class MyWebViewClient extends WebViewClient{
+		@Override
+		public void onPageFinished(WebView view, String url) {
+			super.onPageFinished(view, url);
+			view.loadUrl("javascript: TriggerNative = function(pluginName,method,data,callID){ window.JSBridge.triggerNative(pluginName,method,data,callID);};");
+		}
+	}
 
 
 	/**
@@ -70,17 +82,22 @@ public class HybridWebView{
 
 
 
-	public WebView getmWebView() {
+	public WebView getWebView() {
 		return webView;
 	}
 
 
 
-	public void setmWebView(WebView webView) {
+	public void setWebView(WebView webView) {
 		this.webView = webView;
 	}
 
 
+	public Activity getActivity() {
+		return activity;
+	}
 
-
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
 }

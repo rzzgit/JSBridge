@@ -1,5 +1,7 @@
 package com.rzz.jsbridge.core;
 
+import android.webkit.JavascriptInterface;
+
 import com.rzz.jsbridge.core.utils.JSONHelper;
 
 import java.lang.reflect.Method;
@@ -7,7 +9,7 @@ import java.lang.reflect.Method;
 
 /**
  * js与native的核心交互
- * @author rzz
+ * @author com.rzz
  */
 public class JSBridge{
 
@@ -32,6 +34,7 @@ public class JSBridge{
 	 * @param pluginParams
 	 * @param callBack
 	 */
+	@JavascriptInterface
 	public void triggerNative(String pluginName,String pluginMethod,String pluginParams,String callBack) {
 		PluginConfig plugin = ConfigManager.pluginMapping.get(pluginName);
 		JSPlugin jsPluginInstance = null;
@@ -53,7 +56,7 @@ public class JSBridge{
 				Method method = cls.getDeclaredMethod(pluginMethod);
 				method.invoke(pluginInstance);
 			}else{
-				Method method = cls.getDeclaredMethod(pluginMethod, new Class[]{String.class });
+				Method method = cls.getDeclaredMethod(pluginMethod, String.class);
 				method.invoke(pluginInstance,pluginParams);
 			}
 		} catch (ClassNotFoundException e) {

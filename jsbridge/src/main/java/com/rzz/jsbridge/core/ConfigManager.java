@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
 public class ConfigManager {
 	private final static String PLUGIN_CONFIG_NAME = "jsbridge_config.json";
    

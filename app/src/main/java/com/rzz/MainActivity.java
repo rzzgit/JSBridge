@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 		HybridManager.init(getApplicationContext());
 		
 		hybridWebView = new HybridWebView(this);
-		addContentView(hybridWebView.getmWebView(), new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		addContentView(hybridWebView.getWebView(), new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 //		hybridWebView.loadUrl("http://192.168.1.120:3000/demo.html");
 		hybridWebView.loadUrl("file:///android_asset/demo.html");
 	}
