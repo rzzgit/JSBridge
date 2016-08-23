@@ -43,9 +43,9 @@ for assets config:
 
                "plugins":[
 
-                    {"name":"FirstPlugin","package":"com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
+                    {"name":"FirstPlugin","package":"com.com.rzz.web.plugin.FirstPlugin","ext":{"b":"v"} }
                 ,
-                    {"name":"TestPlugin","package":"com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
+                    {"name":"TestPlugin","package":"com.com.rzz.web.plugin.TestPlugin","ext":{"b":"v"} } ]
 
             }
 		
