@@ -63,10 +63,6 @@ public class JSBridge{
 			onError(callBack,e);
 		} catch(Exception e){
 			onError(callBack,e);
-		}finally{
-			if(jsPluginInstance!=null){
-				jsPluginInstance.onDestroy();
-			}
 		}
 	}
 

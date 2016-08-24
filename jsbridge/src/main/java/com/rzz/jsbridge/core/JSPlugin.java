@@ -1,5 +1,7 @@
 package com.rzz.jsbridge.core;
 
+import android.content.Intent;
+
 import org.json.JSONObject;
 
 
@@ -7,7 +9,7 @@ import org.json.JSONObject;
  * js插件
  * @author com.rzz
  */
-public class JSPlugin {
+public class JSPlugin implements HybridWebViewLifeCycle{
 
 	private JSBridge jsBridge;
 	private String callBack;
@@ -55,10 +57,41 @@ public class JSPlugin {
 		onDestroy();
 	}
 
+	@Override
+	public void onStart() {
+
+	}
+
+	@Override
+	public void onRestart() {
+
+	}
+
+	@Override
+	public void onResume() {
+
+	}
+
+	@Override
+	public void onStop() {
+
+	}
+
+	@Override
+	public void onPause() {
+
+	}
+
 	/**
 	 * 释放插件的重要资源
 	 */
+	@Override
 	public void onDestroy(){
+
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 	}
 }
